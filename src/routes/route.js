@@ -1,7 +1,7 @@
 import { Router } from "express";
 
-const router = Router();
+const apiRouter = Router();
 
-router.get("/", (req, res) => res.send("Hello"))
+apiRouter.get("/", (req, res) => res.send("Hello"))
 
-export default router;
+export default apiRouter;

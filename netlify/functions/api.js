@@ -1,9 +1,12 @@
-import express from "express";
+import express, { Router } from "express";
 import serverless from "serverless-http";
-import router from "../../src/routes/route";
+import apiRouter from "../../src/routes/route";
 
 const api = express();
+const router = Router();
 
-api.use("/api/v1/", router);
+api.use("/", router);
+
+router.use("/api/v1/", apiRouter)
 
 export const handler = serverless(api);
